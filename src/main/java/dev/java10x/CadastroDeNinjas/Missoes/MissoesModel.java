@@ -2,11 +2,17 @@ package dev.java10x.CadastroDeNinjas.Missoes;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.java10x.CadastroDeNinjas.Ninjas.NinjaModel;
 import jakarta.persistence.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 
 @Entity
 @Table(name = "tb_missoes")
+@Data // Creia todos os getters e setters
+@NoArgsConstructor // Cria construtor vazio
+@AllArgsConstructor // Cria cronstrutor cheio
 public class MissoesModel {
 
     @Id
@@ -18,46 +24,4 @@ public class MissoesModel {
     // OneToMany - Uma missão pode ter vários ninjas.
     @OneToMany(mappedBy = "missoes")
     private List<NinjaModel> ninja;
-
-    public MissoesModel() {
-    }
-
-    public MissoesModel(Long id, String nomeMissao, String rank, List<NinjaModel> ninja) {
-        this.id = id;
-        this.nomeMissao = nomeMissao;
-        this.rank = rank;
-        this.ninja = ninja;
-    }
-
-    public Long getId() {
-        return id;
-    }
-
-    public void setId(Long id) {
-        this.id = id;
-    }
-
-    public String getNomeMissao() {
-        return nomeMissao;
-    }
-
-    public void setNomeMissao(String nomeMissao) {
-        this.nomeMissao = nomeMissao;
-    }
-
-    public String getRank() {
-        return rank;
-    }
-
-    public void setRank(String rank) {
-        this.rank = rank;
-    }
-
-    public List<NinjaModel> getNinja() {
-        return ninja;
-    }
-
-    public void setNinja(List<NinjaModel> ninja) {
-        this.ninja = ninja;
-    }
 }
