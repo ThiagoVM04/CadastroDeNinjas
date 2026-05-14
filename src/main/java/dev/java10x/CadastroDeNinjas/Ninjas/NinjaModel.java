@@ -18,6 +18,7 @@ public class NinjaModel {
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Passar uma estratégia, como vair gerar i id automaticamente
     private Long id;
     private String nome;
+    @Column(unique = true)
     private String email;
     private int idade;
 
