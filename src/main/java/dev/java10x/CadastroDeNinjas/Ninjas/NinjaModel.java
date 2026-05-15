@@ -6,7 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 // Entity transforma uma classe em uma entidade no BD
-// jpa = Java Persistence API
+// JPA = Java Persistence API
 @Entity
 @Table(name = "tb_cadastro")
 @Data // Creia todos os getters e setters
@@ -16,10 +16,16 @@ public class NinjaModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY) // Passar uma estratégia, como vair gerar i id automaticamente
+    @Column(name = "id_ninja")
     private Long id;
+
+    @Column(name = "nome")
     private String nome;
+
     @Column(unique = true)
     private String email;
+
+    @Column(name = "idade")
     private int idade;
 
     // @ManyToOne - Um ninja tem uma unica missão.

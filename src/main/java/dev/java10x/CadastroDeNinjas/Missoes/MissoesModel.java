@@ -1,5 +1,4 @@
 package dev.java10x.CadastroDeNinjas.Missoes;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import dev.java10x.CadastroDeNinjas.Ninjas.NinjaModel;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
@@ -16,8 +15,13 @@ public class MissoesModel {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id_missao")
     private Long id;
+
+    @Column(name = "nome_missao")
     private String nomeMissao;
+
+    @Column(name = "rank")
     private String rank;
 
     // OneToMany - Uma missão pode ter vários ninjas.
