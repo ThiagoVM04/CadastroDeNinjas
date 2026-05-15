@@ -19,6 +19,9 @@ public class NinjaModel {
     @Column(name = "id_ninja")
     private Long id;
 
+    @Column(name = "img_url")
+    private String imgUrl;
+
     @Column(name = "nome")
     private String nome;
 
